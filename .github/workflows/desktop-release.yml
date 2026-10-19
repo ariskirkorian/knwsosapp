@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - "desktop-v*"
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -37,8 +36,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-          cache: npm
-          cache-dependency-path: desktop/package.json
 
       - uses: dtolnay/rust-toolchain@stable
         with:
