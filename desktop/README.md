@@ -16,6 +16,8 @@ Install Rust and the platform prerequisites listed in the Tauri v2 prerequisites
 
 ~~~sh
 npm install
+node -e "const fs = require('node:fs'); fs.writeFileSync('icons/knwsos-icon.png', Buffer.from(fs.readFileSync('icons/knwsos-icon.png.base64', 'utf8'), 'base64'))"
+npm run tauri -- icon icons/knwsos-icon.png --output src-tauri/icons
 npm run tauri -- build
 ~~~
 
